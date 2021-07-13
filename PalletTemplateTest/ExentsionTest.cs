@@ -131,12 +131,12 @@ namespace ExentsionTest
             await _substrateClient.ConnectAsync(cts.Token);
 
             var u32 = new U32();
-            u32.Create(1291845632);
+            u32.Create(77);
 
             _ = await _substrateClient.Author.SubmitAndWatchExtrinsicAsync(ActionExtrinsicUpdate, ExtensionCall.DoSomething(u32), Alice, 0, 64, cts.Token);
             Thread.Sleep(extrinsic_wait);
 
-            var result = await _substrateClient.GetStorageAsync("ConnectFour", "Something", cts.Token);
+            var result = await _substrateClient.GetStorageAsync("TemplateModule", "Something", cts.Token);
             Assert.AreEqual("U32", result.GetType().Name);
 
             var something = result as U32;

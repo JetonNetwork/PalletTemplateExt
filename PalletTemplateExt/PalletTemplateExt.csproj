@@ -5,7 +5,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="SubstrateNetApi" Version="1.0.191" />
+    <PackageReference Include="SubstrateNetApi" Version="1.0.192" />
   </ItemGroup>
 
 </Project>
